@@ -193,19 +193,64 @@ export default function ProjectGallery() {
                     className="relative aspect-[16/10] w-full border-y-2 border-inherit bg-black/10 overflow-hidden cursor-pointer"
                   >
                     {isNotesGpt ? (
-                      // Featured NotesGPT Preview Card
-                      <div className="w-full h-full bg-white p-5 flex flex-col justify-between font-mono text-xs text-[#0A0E1A] select-none">
+                      // Featured NotesGPT Preview Card with Real Product Screenshots Deck
+                      <div className="w-full h-full bg-[#FFFFFF] p-3 sm:p-4 flex flex-col justify-between font-mono text-xs text-[#0A0E1A] select-none">
                         <div className="flex justify-between items-center border-b border-[#0A0E1A]/20 pb-2">
-                          <span className="font-bold text-xs">NOTESGPT ACADEMIC RESEARCH WORKSTATION</span>
+                          <span className="font-bold text-xs uppercase tracking-tight flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            NOTESGPT ACADEMIC RESEARCH WORKSTATION
+                          </span>
                           <span className="text-xs px-2 py-0.5 bg-[#1434FF] text-white font-bold">&lt;15s LATENCY / LOCAL INFERENCE</span>
                         </div>
-                        <div className="space-y-1 py-2">
-                          <div className="font-bold text-sm">Compile textbooks, PDFs & handwritten notes into structured learning kits.</div>
-                          <div className="text-[#474E5D] text-xs font-medium">RAG Vector Index · Ollama (deepseek-r1:8b) · WebLLM WebGPU · Gemini 2.0 Flash</div>
+
+                        {/* Screenshot Showcase Grid inside Card */}
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 my-2 flex-1 items-center">
+                          {/* Main Primary View */}
+                          <div className="md:col-span-7 relative h-36 sm:h-44 bg-black/5 border border-[#0A0E1A] overflow-hidden group/img">
+                            <Image
+                              src="/images/projects/notesgpt-overview.png"
+                              alt="NotesGPT Workstation Interface"
+                              fill
+                              className="object-contain hover:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                            <div className="absolute bottom-1 left-1 bg-[#0A0E1A]/85 text-white px-2 py-0.5 text-[10px] font-mono">
+                              Grounding &amp; Dual RAG View
+                            </div>
+                          </div>
+
+                          {/* Secondary Screenshots Stack */}
+                          <div className="md:col-span-5 grid grid-cols-2 md:grid-cols-1 gap-2">
+                            <div className="relative h-16 sm:h-20 bg-black/5 border border-[#0A0E1A] overflow-hidden">
+                              <Image
+                                src="/images/projects/notesgpt-ingestion.jpg"
+                                alt="Document Ingestion & OCR"
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-300"
+                                sizes="200px"
+                              />
+                              <div className="absolute bottom-0.5 left-0.5 bg-[#0A0E1A]/85 text-white px-1.5 py-0.5 text-[9px] font-mono">
+                                Ingest &amp; OCR
+                              </div>
+                            </div>
+                            <div className="relative h-16 sm:h-20 bg-black/5 border border-[#0A0E1A] overflow-hidden">
+                              <Image
+                                src="/images/projects/notesgpt-studykit.jpg"
+                                alt="Study Kit Generation"
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-300"
+                                sizes="200px"
+                              />
+                              <div className="absolute bottom-0.5 left-0.5 bg-[#0A0E1A]/85 text-white px-1.5 py-0.5 text-[9px] font-mono">
+                                1-Pass Study Kits
+                              </div>
+                            </div>
+                          </div>
                         </div>
+
                         <div className="flex justify-between items-center text-xs text-[#1434FF] font-bold pt-2 border-t border-[#0A0E1A]/10">
-                          <span>Dev.to Architecture Deep-Dive + GitHub Open Source</span>
-                          <span className="underline">Inspect 3 Station Views →</span>
+                          <span className="truncate mr-2">Dev.to Architecture Deep-Dive + GitHub Source</span>
+                          <span className="underline shrink-0">Open Full Case Study &amp; Pipeline Architecture →</span>
                         </div>
                       </div>
                     ) : isClimbit ? (
