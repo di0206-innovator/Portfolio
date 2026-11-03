@@ -190,67 +190,84 @@ export default function ProjectGallery() {
                   {/* Card Media Preview Frame */}
                   <div 
                     onClick={() => setSelectedProject(project)}
-                    className="relative aspect-[16/10] w-full border-y-2 border-inherit bg-black/10 overflow-hidden cursor-pointer"
+                    className={`relative w-full border-y-2 border-inherit bg-black/10 overflow-hidden cursor-pointer ${
+                      isNotesGpt ? "min-h-[340px] sm:min-h-[380px]" : "aspect-[16/10]"
+                    }`}
                   >
                     {isNotesGpt ? (
-                      // Featured NotesGPT Preview Card with Real Product Screenshots Deck
-                      <div className="w-full h-full bg-[#FFFFFF] p-3 sm:p-4 flex flex-col justify-between font-mono text-xs text-[#0A0E1A] select-none">
-                        <div className="flex justify-between items-center border-b border-[#0A0E1A]/20 pb-2">
-                          <span className="font-bold text-xs uppercase tracking-tight flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      // Featured NotesGPT Preview Card with Clean Centered Screenshot Grid
+                      <div className="w-full h-full bg-[#FFFFFF] p-4 sm:p-6 flex flex-col justify-between font-mono text-xs text-[#0A0E1A] select-none">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b-2 border-[#0A0E1A] gap-2 mb-4">
+                          <span className="font-bold text-xs uppercase tracking-tight flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                             NOTESGPT ACADEMIC RESEARCH WORKSTATION
                           </span>
-                          <span className="text-xs px-2 py-0.5 bg-[#1434FF] text-white font-bold">&lt;15s LATENCY / LOCAL INFERENCE</span>
+                          <span className="text-xs px-2.5 py-1 bg-[#1434FF] text-white font-bold tracking-wider self-start sm:self-auto">
+                            &lt;15s LATENCY / LOCAL INFERENCE
+                          </span>
                         </div>
 
                         {/* Screenshot Showcase Grid inside Card */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 my-2 flex-1 items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 my-auto items-stretch">
                           {/* Main Primary View */}
-                          <div className="md:col-span-7 relative h-36 sm:h-44 bg-black/5 border border-[#0A0E1A] overflow-hidden group/img">
-                            <Image
-                              src="/images/projects/notesgpt-overview.png"
-                              alt="NotesGPT Workstation Interface"
-                              fill
-                              className="object-contain hover:scale-105 transition-transform duration-300"
-                              sizes="(max-width: 768px) 100vw, 50vw"
-                            />
-                            <div className="absolute bottom-1 left-1 bg-[#0A0E1A]/85 text-white px-2 py-0.5 text-[10px] font-mono">
-                              Grounding &amp; Dual RAG View
+                          <div className="md:col-span-7 flex flex-col justify-between bg-[#F8F7F2] border-2 border-[#0A0E1A] p-2.5 shadow-brutal-xs">
+                            <div className="relative w-full h-44 sm:h-52 bg-white border border-[#0A0E1A] overflow-hidden">
+                              <Image
+                                src="/images/projects/notesgpt-overview.png"
+                                alt="NotesGPT Workstation Interface"
+                                fill
+                                className="object-contain hover:scale-105 transition-transform duration-300"
+                                sizes="(max-width: 768px) 100vw, 55vw"
+                              />
+                            </div>
+                            <div className="flex items-center justify-between pt-2 px-1 text-[11px] font-mono text-[#0A0E1A]">
+                              <span className="font-bold text-[#1434FF] uppercase">AI STUDY ASSISTANT</span>
+                              <span className="text-[#474E5D]">Grounded RAG Shell</span>
                             </div>
                           </div>
 
                           {/* Secondary Screenshots Stack */}
-                          <div className="md:col-span-5 grid grid-cols-2 md:grid-cols-1 gap-2">
-                            <div className="relative h-16 sm:h-20 bg-black/5 border border-[#0A0E1A] overflow-hidden">
-                              <Image
-                                src="/images/projects/notesgpt-ingestion.jpg"
-                                alt="Document Ingestion & OCR"
-                                fill
-                                className="object-cover hover:scale-105 transition-transform duration-300"
-                                sizes="200px"
-                              />
-                              <div className="absolute bottom-0.5 left-0.5 bg-[#0A0E1A]/85 text-white px-1.5 py-0.5 text-[9px] font-mono">
-                                Ingest &amp; OCR
+                          <div className="md:col-span-5 grid grid-cols-2 md:grid-cols-1 gap-3">
+                            <div className="flex flex-col justify-between bg-[#F8F7F2] border-2 border-[#0A0E1A] p-2 shadow-brutal-xs">
+                              <div className="relative w-full h-20 sm:h-24 bg-white border border-[#0A0E1A] overflow-hidden">
+                                <Image
+                                  src="/images/projects/notesgpt-ingestion.jpg"
+                                  alt="Document Ingestion & OCR"
+                                  fill
+                                  className="object-cover hover:scale-105 transition-transform duration-300"
+                                  sizes="250px"
+                                />
+                              </div>
+                              <div className="flex items-center justify-between pt-1.5 px-1 text-[10px] font-mono">
+                                <span className="font-bold text-[#1434FF] uppercase">INGEST &amp; OCR</span>
+                                <span className="text-[#474E5D]">PDF.js + Tesseract</span>
                               </div>
                             </div>
-                            <div className="relative h-16 sm:h-20 bg-black/5 border border-[#0A0E1A] overflow-hidden">
-                              <Image
-                                src="/images/projects/notesgpt-studykit.jpg"
-                                alt="Study Kit Generation"
-                                fill
-                                className="object-cover hover:scale-105 transition-transform duration-300"
-                                sizes="200px"
-                              />
-                              <div className="absolute bottom-0.5 left-0.5 bg-[#0A0E1A]/85 text-white px-1.5 py-0.5 text-[9px] font-mono">
-                                1-Pass Study Kits
+
+                            <div className="flex flex-col justify-between bg-[#F8F7F2] border-2 border-[#0A0E1A] p-2 shadow-brutal-xs">
+                              <div className="relative w-full h-20 sm:h-24 bg-white border border-[#0A0E1A] overflow-hidden">
+                                <Image
+                                  src="/images/projects/notesgpt-studykit.jpg"
+                                  alt="Study Kit Generation"
+                                  fill
+                                  className="object-cover hover:scale-105 transition-transform duration-300"
+                                  sizes="250px"
+                                />
+                              </div>
+                              <div className="flex items-center justify-between pt-1.5 px-1 text-[10px] font-mono">
+                                <span className="font-bold text-[#1434FF] uppercase">STUDY KITS</span>
+                                <span className="text-[#474E5D]">1-Pass Schema</span>
                               </div>
                             </div>
                           </div>
                         </div>
 
-                        <div className="flex justify-between items-center text-xs text-[#1434FF] font-bold pt-2 border-t border-[#0A0E1A]/10">
-                          <span className="truncate mr-2">Dev.to Architecture Deep-Dive + GitHub Source</span>
-                          <span className="underline shrink-0">Open Full Case Study &amp; Pipeline Architecture →</span>
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#1434FF] font-bold pt-3 mt-4 border-t-2 border-[#0A0E1A] gap-2">
+                          <span className="truncate">Dev.to Architecture Deep-Dive + GitHub Open Source</span>
+                          <span className="underline shrink-0 flex items-center gap-1 text-[#0A0E1A] hover:text-[#1434FF]">
+                            <span>Click Card to Open Full Case Study</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-[#1434FF]" />
+                          </span>
                         </div>
                       </div>
                     ) : isClimbit ? (
