@@ -74,28 +74,31 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
-            {project.url ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-[#0A0E1A] hover:bg-[#1434FF] text-white font-mono text-xs uppercase tracking-wider transition-colors"
-              >
-                <span>Live Deployment</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            ) : project.githubUrl ? (
+          <div className="flex items-center gap-2">
+            {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-[#0A0E1A] hover:bg-[#1434FF] text-white font-mono text-xs uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#0A0E1A] hover:bg-[#1434FF] text-white font-mono text-xs uppercase tracking-wider transition-colors border border-[#0A0E1A]"
+                title="Open GitHub Repository"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span>Source Repository</span>
+                <span className="hidden sm:inline">Code</span>
               </a>
-            ) : null}
+            )}
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1434FF] hover:bg-[#0A0E1A] text-white font-mono text-xs uppercase tracking-wider transition-colors border border-[#0A0E1A]"
+                title="Open Live Deployment"
+              >
+                <span>Live Deployment</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
 
             <button
               onClick={onClose}
@@ -667,7 +670,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </span>
 
           <div className="flex items-center gap-3">
-            {project.url ? (
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-[#0A0E1A] hover:bg-[#1434FF] text-white font-bold uppercase tracking-wider flex items-center gap-2 transition-colors border border-[#0A0E1A] shadow-brutal-sm"
+                title="Open GitHub Repository"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub Repo</span>
+              </a>
+            )}
+            {project.url && (
               <a
                 href={project.url}
                 target="_blank"
@@ -677,17 +692,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <span>Visit Live App</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
-            ) : project.githubUrl ? (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-[#0A0E1A] hover:bg-[#1434FF] text-white font-bold uppercase tracking-wider flex items-center gap-2 transition-colors border border-[#0A0E1A] shadow-brutal-sm"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>GitHub Repo</span>
-              </a>
-            ) : null}
+            )}
             <button
               onClick={onClose}
               className="px-4 py-2 bg-white hover:bg-[#EEEDE7] border border-[#0A0E1A] uppercase tracking-wider font-semibold"

@@ -44,6 +44,125 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: "krishisetu",
+    title: "KrishiSetu",
+    tagline: "Connected AI Agricultural Lifecycle Operating System",
+    category: "AgriTech · Founder-Led Exploration · AI AgOS",
+    badge: "Flagship Founder Journey",
+    url: "https://krishi-setu-ivory.vercel.app/",
+    projectType: "Founder Exploration",
+    status: "Live Deployment",
+    confidenceLevel: "Verified Direct Source",
+    image: "/images/projects/krishisetu.png",
+    palette: {
+      bg: "#1B4332",
+      text: "#FFFFFF",
+      accent: "#D4A373",
+      border: "#2D6A4F",
+    },
+    overview:
+      "KrishiSetu is Divyanshu's foundational startup journey—an end-to-end agricultural platform designed to empower Indian farmers with direct APMC mandi intelligence, AI crop advisories, soil micro-climate insights, and dynamic marketplace bidding.",
+    problem:
+      "Indian agriculture is burdened by multi-layer middlemen markups, opaque APMC mandi price discovery, fragmented cold-storage logistics, and a total absence of unified crop lifecycle data for smallholder farmers.",
+    solution:
+      "A comprehensive agricultural operating system that bridges farmer onboarding, field telemetry, AI crop health diagnostics, dynamic produce bidding, and future agri-credit scoring.",
+    roleAndContribution:
+      "Founder, System Architect & Product Designer. Conducted farmer journey mapping, designed the complete multilingual interface, APMC price ticker, and farm intelligence dashboard.",
+    keyFeatures: [
+      "Live APMC mandi market ticker and commodity price intelligence",
+      "AI crop health advisory and vernacular pest diagnostic assistant",
+      "Farm profile, soil micro-climate indicators, and yield prediction telemetry",
+      "Direct farmer-to-buyer produce discovery and dynamic bidding concepts",
+      "Cold-storage reservation and agricultural equipment rental workflows",
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "AgriData APIs", "Lucide Icons", "Vercel"],
+    designDecisions:
+      "Deep forest green (#1B4332) grounded with rich agricultural earth tones (#D4A373), high-contrast data cards, and bilingual vernacular typography tailored for rural readability.",
+    engineeringChallenges:
+      "Modeling the complex agricultural calendar and ensuring data density remains legible and responsive on low-cost Android mobile devices in rural areas.",
+    lessonsLearned:
+      "Technology adoption in agriculture requires radical trust and simplicity; solving market discovery without solving post-harvest storage and transport leaves the farmer vulnerable.",
+    statusNotes:
+      "Live deployment features complete core UI, APMC price ticker, farm dashboard, and advisory workflows. Marketplace transactions and credit underwriting remain in roadmap.",
+    founderStory:
+      "KrishiSetu is where my journey as a serious product builder began. Spending weeks understanding the real lived friction of Indian farmers taught me that software alone is not enough—you must understand distribution, physical logistics, and the human trust barrier before writing a single line of code.",
+    demonstratedVsRoadmap: {
+      demonstrated: [
+        "Farmer onboarding & farm record management",
+        "APMC mandi commodity pricing and trend interface",
+        "Soil micro-climate and weather intelligence widgets",
+        "AI crop advisory interface and disease detection flow",
+        "Produce listing and initial bid exploration screens",
+      ],
+      roadmap: [
+        "Live APMC e-Nam dynamic auction bidding gateway",
+        "Cold-storage network integration and real-time bay booking",
+        "Agri-credit scoring engine powered by crop cycle history",
+        "IoT field sensor telemetry and drone imagery ingestion",
+        "Carbon-farming incentive tracking and green credits",
+      ],
+    },
+    articles: [
+      {
+        title: "Building KrishiSetu: The Agricultural Realities That Shaped My Founder Mindset",
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/in/divyanshu-sinha-46074126b/",
+        note: "Reflection on building for Bharat, understanding supply chain intermediaries, and product empathy.",
+      },
+    ],
+  },
+  {
+    id: "stratify",
+    title: "Stratify",
+    tagline: "The Operating System for the Startup Economy",
+    category: "Startup Intelligence · Founder OS",
+    badge: "Startup Ecosystem OS",
+    url: "https://stratify-murex.vercel.app/",
+    projectType: "Interactive Concept",
+    status: "Interactive Demo",
+    confidenceLevel: "Verified Direct Source",
+    image: "/images/projects/stratify.jpg",
+    palette: {
+      bg: "#F8F7F2",
+      text: "#0A0E1A",
+      accent: "#C6F24F",
+      border: "#0A0E1A",
+    },
+    overview:
+      "Stratify connects founders, investors, angels, accelerators, and startup institutions into a living graph to drive real-time AI intelligence, capital flow, and verified proof of work.",
+    problem:
+      "Startup ecosystems are notoriously fragmented across disjointed spreadsheets, closed investor networks, and opaque dealflow channels, preventing early-stage builders from discovering the right capital, collaborators, and mentors.",
+    solution:
+      "An interactive network graph architecture that models entity relationships, syndicates, and proof-of-work traction into a unified intelligence operating system.",
+    roleAndContribution:
+      "Product Strategy, System Architecture & Frontend Experience Design. Designed the living graph visualizer, founder/investor role switcher, and core UI.",
+    keyFeatures: [
+      "Interactive 2D force-directed startup graph linking founders, angels, and accelerators",
+      "Dynamic Role Matrix switcher tailored for Founders vs. Investors",
+      "Real-time synchronized ecosystem telemetry and live network status",
+      "Curated walkthrough booking flow and verified founder credentials",
+    ],
+    techStack: ["React", "Vite", "Tailwind CSS", "Canvas / Graph Visualization", "Vercel"],
+    designDecisions:
+      "Editorial cream canvas (#F8F7F2) paired with high-contrast obsidian typography and electric lime (#C6F24F) accents to evoke financial authority with builder vigor.",
+    engineeringChallenges:
+      "Rendering interconnected ecosystem nodes smoothly while preserving responsive mobile readability and clean layout bounds.",
+    lessonsLearned:
+      "Network visualizations become overwhelming without progressive disclosure; grouping entities by archetype unlocks intuitive exploration.",
+    statusNotes: "Live interactive concept deployment deployed on Vercel.",
+    founderStory:
+      "KrishiSetu was the first startup idea I seriously worked on. Working through founder questions—whether the problem is right, who to build with, and how to navigate the startup journey—helped surface the broader ecosystem problem Stratify explores.",
+    articles: [
+      {
+        title: "Stratify: The Founder Questions That Led to an Ecosystem Operating System",
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/posts/divyanshu-sinha-46074126b_stratify-buildinpublic-startups-ugcPost-7488096918762569728-X1av/",
+        shortUrl: "https://lnkd.in/p/duupiZnH",
+        note: "How building KrishiSetu revealed the systemic friction in early-stage founder ecosystems.",
+      },
+    ],
+  },
+  {
     id: "notesgpt",
     title: "NotesGPT",
     tagline: "An Offline-Capable AI Study Assistant with RAG, Local LLMs & WebGPU",
@@ -122,132 +241,13 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "stratify",
-    title: "Stratify",
-    tagline: "The Operating System for the Startup Economy",
-    category: "Startup Intelligence · Founder OS",
-    badge: "Startup Ecosystem OS",
-    url: "https://stratify-murex.vercel.app/",
-    projectType: "Interactive Concept",
-    status: "Interactive Demo",
-    confidenceLevel: "Verified Direct Source",
-    image: "/images/projects/stratify.jpg",
-    palette: {
-      bg: "#F8F7F2",
-      text: "#0A0E1A",
-      accent: "#C6F24F",
-      border: "#0A0E1A",
-    },
-    overview:
-      "Stratify connects founders, investors, angels, accelerators, and startup institutions into a living graph to drive real-time AI intelligence, capital flow, and verified proof of work.",
-    problem:
-      "Startup ecosystems are notoriously fragmented across disjointed spreadsheets, closed investor networks, and opaque dealflow channels, preventing early-stage builders from discovering the right capital, collaborators, and mentors.",
-    solution:
-      "An interactive network graph architecture that models entity relationships, syndicates, and proof-of-work traction into a unified intelligence operating system.",
-    roleAndContribution:
-      "Product Strategy, System Architecture & Frontend Experience Design. Designed the living graph visualizer, founder/investor role switcher, and core UI.",
-    keyFeatures: [
-      "Interactive 2D force-directed startup graph linking founders, angels, and accelerators",
-      "Dynamic Role Matrix switcher tailored for Founders vs. Investors",
-      "Real-time synchronized ecosystem telemetry and live network status",
-      "Curated walkthrough booking flow and verified founder credentials",
-    ],
-    techStack: ["React", "Vite", "Tailwind CSS", "Canvas / Graph Visualization", "Vercel"],
-    designDecisions:
-      "Editorial cream canvas (#F8F7F2) paired with high-contrast obsidian typography and electric lime (#C6F24F) accents to evoke financial authority with builder vigor.",
-    engineeringChallenges:
-      "Rendering interconnected ecosystem nodes smoothly while preserving responsive mobile readability and clean layout bounds.",
-    lessonsLearned:
-      "Network visualizations become overwhelming without progressive disclosure; grouping entities by archetype unlocks intuitive exploration.",
-    statusNotes: "Live interactive concept deployment deployed on Vercel.",
-    founderStory:
-      "KrishiSetu was the first startup idea I seriously worked on. Working through founder questions—whether the problem is right, who to build with, and how to navigate the startup journey—helped surface the broader ecosystem problem Stratify explores.",
-    articles: [
-      {
-        title: "Stratify: The Founder Questions That Led to an Ecosystem Operating System",
-        platform: "LinkedIn",
-        url: "https://www.linkedin.com/posts/divyanshu-sinha-46074126b_stratify-buildinpublic-startups-ugcPost-7488096918762569728-X1av/",
-        shortUrl: "https://lnkd.in/p/duupiZnH",
-        note: "How building KrishiSetu revealed the systemic friction in early-stage founder ecosystems.",
-      },
-    ],
-  },
-  {
-    id: "krishisetu",
-    title: "KrishiSetu",
-    tagline: "Connected AI Agricultural Lifecycle Operating System",
-    category: "AgriTech · Founder-Led Exploration · AI AgOS",
-    badge: "Flagship Founder Journey",
-    url: "https://krishi-setu-ivory.vercel.app/",
-    githubUrl: "https://github.com/di0206-innovator/Krishi-Setu",
-    projectType: "Founder Exploration",
-    status: "Live Deployment",
-    confidenceLevel: "Verified Direct Source",
-    image: "/images/projects/krishisetu.png",
-    palette: {
-      bg: "#1B4332",
-      text: "#FFFFFF",
-      accent: "#D4A373",
-      border: "#2D6A4F",
-    },
-    overview:
-      "KrishiSetu is Divyanshu's foundational startup journey—an end-to-end agricultural platform designed to empower Indian farmers with direct APMC mandi intelligence, AI crop advisories, soil micro-climate insights, and dynamic marketplace bidding.",
-    problem:
-      "Indian agriculture is burdened by multi-layer middlemen markups, opaque APMC mandi price discovery, fragmented cold-storage logistics, and a total absence of unified crop lifecycle data for smallholder farmers.",
-    solution:
-      "A comprehensive agricultural operating system that bridges farmer onboarding, field telemetry, AI crop health diagnostics, dynamic produce bidding, and future agri-credit scoring.",
-    roleAndContribution:
-      "Founder, System Architect & Product Designer. Conducted farmer journey mapping, designed the complete multilingual interface, APMC price ticker, and farm intelligence dashboard.",
-    keyFeatures: [
-      "Live APMC mandi market ticker and commodity price intelligence",
-      "AI crop health advisory and vernacular pest diagnostic assistant",
-      "Farm profile, soil micro-climate indicators, and yield prediction telemetry",
-      "Direct farmer-to-buyer produce discovery and dynamic bidding concepts",
-      "Cold-storage reservation and agricultural equipment rental workflows",
-    ],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "AgriData APIs", "Lucide Icons", "Vercel"],
-    designDecisions:
-      "Deep forest green (#1B4332) grounded with rich agricultural earth tones (#D4A373), high-contrast data cards, and bilingual vernacular typography tailored for rural readability.",
-    engineeringChallenges:
-      "Modeling the complex agricultural calendar and ensuring data density remains legible and responsive on low-cost Android mobile devices in rural areas.",
-    lessonsLearned:
-      "Technology adoption in agriculture requires radical trust and simplicity; solving market discovery without solving post-harvest storage and transport leaves the farmer vulnerable.",
-    statusNotes:
-      "Live deployment features complete core UI, APMC price ticker, farm dashboard, and advisory workflows. Marketplace transactions and credit underwriting remain in roadmap.",
-    founderStory:
-      "KrishiSetu is where my journey as a serious product builder began. Spending weeks understanding the real lived friction of Indian farmers taught me that software alone is not enough—you must understand distribution, physical logistics, and the human trust barrier before writing a single line of code.",
-    demonstratedVsRoadmap: {
-      demonstrated: [
-        "Farmer onboarding & farm record management",
-        "APMC mandi commodity pricing and trend interface",
-        "Soil micro-climate and weather intelligence widgets",
-        "AI crop advisory interface and disease detection flow",
-        "Produce listing and initial bid exploration screens",
-      ],
-      roadmap: [
-        "Live APMC e-Nam dynamic auction bidding gateway",
-        "Cold-storage network integration and real-time bay booking",
-        "Agri-credit scoring engine powered by crop cycle history",
-        "IoT field sensor telemetry and drone imagery ingestion",
-        "Carbon-farming incentive tracking and green credits",
-      ],
-    },
-    articles: [
-      {
-        title: "Building KrishiSetu: The Agricultural Realities That Shaped My Founder Mindset",
-        platform: "LinkedIn",
-        url: "https://www.linkedin.com/in/divyanshu-sinha-46074126b/",
-        note: "Reflection on building for Bharat, understanding supply chain intermediaries, and product empathy.",
-      },
-    ],
-  },
-  {
     id: "healthify",
     title: "Healthify",
     tagline: "AI-Powered Food Safety Scanner & Ingredient Intelligence",
     category: "Consumer AI · Food & Public Health",
     badge: "Consumer Health AI",
     url: "https://healthify-lyart.vercel.app/",
+    githubUrl: "https://github.com/di0206-innovator/Healthify",
     projectType: "Interactive Concept",
     status: "Live Deployment",
     confidenceLevel: "Verified Direct Source",
@@ -365,6 +365,7 @@ export const PROJECTS: Project[] = [
     category: "Legal AI · Contract Intelligence",
     badge: "Sovereign Legal AI",
     url: "https://nyaysaathi-6qcz.vercel.app/",
+    githubUrl: "https://github.com/di0206-innovator/nyaysaathi",
     projectType: "Flagship Product",
     status: "Live Deployment",
     confidenceLevel: "Verified Direct Source",
@@ -414,6 +415,7 @@ export const PROJECTS: Project[] = [
     category: "FinTech · AI Payment Orchestration",
     badge: "FinTech Recovery Engine",
     url: "https://merchantpulse-psi.vercel.app/",
+    githubUrl: "https://github.com/di0206-innovator/Merchant-Pulse",
     projectType: "Flagship Product",
     status: "Live Deployment",
     confidenceLevel: "Verified Direct Source",
@@ -463,6 +465,7 @@ export const PROJECTS: Project[] = [
     category: "Community Experience · Builder Identity",
     badge: "HackerHouse Goa '26",
     url: "https://hhgoa26-eta.vercel.app/",
+    githubUrl: "https://github.com/di0206-innovator/hhgoa26",
     projectType: "Interactive Concept",
     status: "Live Deployment",
     confidenceLevel: "Verified Direct Source",
