@@ -23,6 +23,8 @@ for (const vp of viewports) {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.goto("/");
     await page.waitForSelector("#hero", { state: "visible", timeout: 10000 });
+    // Wait for card bloom animation to finish
+    await page.waitForTimeout(1400);
 
     // 1. Verify no horizontal overflow
     const hasHorizontalOverflow = await page.evaluate(() => {
@@ -37,7 +39,8 @@ for (const vp of viewports) {
     const headlineBox = await headline.boundingBox();
     expect(headlineBox).not.toBeNull();
 
-    const paragraph = page.locator("#hero p").first();
+    // The hero lead narrative subtitle paragraph (inside the central text block)
+    const paragraph = page.locator("#hero div.relative.z-20 p").first();
     const paragraphBox = await paragraph.boundingBox();
 
     // 3. For viewports >= 1024, check the 10 floating cards
