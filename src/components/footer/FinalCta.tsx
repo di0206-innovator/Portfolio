@@ -111,7 +111,7 @@ export default function FinalCta({ onOpenVideo }: FinalCtaProps) {
             <div className="space-y-1.5 text-white/90">
               <div>GDG ADYPU · Organizer</div>
               <div>Alta Pune Club · President</div>
-              <div>ALTA HQ YouTube · Content Lead</div>
+              <div>Student Content Lead for Alta YT</div>
             </div>
           </div>
 
