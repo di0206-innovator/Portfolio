@@ -1,7 +1,7 @@
 export interface RecognitionItem {
   id: string;
   title: string;
-  category: "Keynote / Speaker" | "Public Speaking" | "Honor / Award" | "National Mentorship";
+  category: "Keynote / Speaker" | "Public Speaking" | "Honor / Award" | "National Mentorship" | "Community Participation";
   date: string;
   organization: string;
   location: string;
@@ -72,15 +72,15 @@ export const RECOGNITIONS: RecognitionItem[] = [
     verified: true,
   },
   {
-    id: "swachhta-action-plan-iittm",
-    title: "Swachhta Action Plan Youth Delegation",
-    category: "Honor / Award",
+    id: "swachhta-action-plan",
+    title: "Swachhta Action Plan",
+    category: "Community Participation",
     date: "November 2019",
-    organization: "Indian Institute of Tourism and Travel Management (IITTM)",
-    location: "National Forum",
+    organization: "Government of India · Ministry of Tourism initiative",
+    location: "National Initiative",
     description:
-      "Selected as student youth delegate contributing to sustainability frameworks and civic environmental action initiatives.",
-    citationNotes: "IITTM institutional youth delegation record.",
+      "Participated in a cleanliness and sanitation awareness initiative associated with the Swachhta Action Plan, a national programme promoting awareness and responsible public participation.",
+    citationNotes: "Government of India · Ministry of Tourism initiative record.",
     verified: true,
   },
 ];
