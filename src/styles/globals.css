@@ -1,0 +1,76 @@
+/* Hallmark · shape: workbench · genre: editorial · theme: custom · job: hire · idea: "Turn momentum into action" · vibe: "editorial high-contrast neo-brutalist tactile voice"
+ * paper: oklch(98% 0.01 90) · accent: oklch(50% 0.3 260) · display: Syne · body: Inter Tight · hero: "Stage headline with floating evidence cards" · nav: edge-aligned · footer: cobalt mast with giant watermark · imagery: real screenshots · signature: "Interactive X-ray with deterministic EV and voice-first process"
+ * axes: light/display-heavy/chromatic-blue · posture: stage · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · weakest: H, tightened hero padding to guarantee primary CTA sits within 1280x800 fold */
+@import "./tokens.css";
+@import "./base.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: clip;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+button:active, a:active {
+  transform: translateY(1px);
+}
+
+/* Custom scanlines for NotesGPT terminal aesthetic */
+.scanlines {
+  background: linear-gradient(
+    transparent 50%, 
+    var(--scanline-line) 50%
+  ), linear-gradient(
+    90deg,
+    var(--scanline-rgb1),
+    var(--scanline-rgb2),
+    var(--scanline-rgb3)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* Paper grain texture */
+.paper-texture {
+  background-color: var(--color-paper);
+  background-image: radial-gradient(var(--color-ink) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+.paper-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+.dark-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--dark-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dark-grid-line) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}

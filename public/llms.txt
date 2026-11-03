@@ -1,0 +1,68 @@
+# Divyanshu Sinha — The Builder Behind the Builds
+
+> Multidisciplinary builder at the intersection of AI product engineering, developer community leadership, growth strategy, and voice-first interaction design. Built specifically for the Wispr Flow India Hiring Challenge.
+
+- **Name**: Divyanshu Sinha
+- **Location**: Pune, Maharashtra, India
+- **Education**: B.Tech AI & Data Science, Ajeenkya DY Patil University (ADYPU)
+- **Primary Website**: https://divyanshusinha.me
+- **LinkedIn**: https://www.linkedin.com/in/divyanshu-sinha-46074126b/
+- **GitHub**: https://github.com/di0206-innovator
+- **Dev.to**: https://dev.to/divyanshu_sinha_72e579e28
+- **Email**: divyanshu.b.sinha@gmail.com
+
+---
+
+## Central Statements
+
+- "I build communities around ideas — and turn momentum into action."
+- "Products are what I ship. Communities are what I build. Stories are how I make them matter."
+
+---
+
+## Leadership Roles & Affiliations
+
+1. **Google Developer Groups (GDG) on Campus ADYPU**: Organizer 2026–27 / Management Lead 2025–26
+2. **Alta Pune Community Club**: President (2025–Present)
+3. **ALTA School of Technology HQ YouTube**: Student Content Lead (2025–Present)
+4. **FlyRank AI**: Founding Growth & DevRel Intern (Nov 2025–Jan 2026)
+5. **Smart India Hackathon (SIH 2026)**: Co-Operations Lead & 2nd Place Winner (Brainworks SIH26007, 27 teams)
+
+---
+
+## 9 Production Builds & Case Studies
+
+1. [NotesGPT](https://github.com/di0206-innovator/Notes-GPT): Local offline-capable AI study assistant with RAG vector indexing, WebLLM (WebGPU), and Ollama.
+2. [Stratify](https://stratify-murex.vercel.app/): Interactive living graph connecting startup founders, angels, and accelerators.
+3. [KrishiSetu](https://krishi-setu-ivory.vercel.app/): Connected AI-powered AgriTech operating system addressing Indian mandi auction inefficiencies.
+4. [Healthify](https://healthify-lyart.vercel.app/): AI-powered consumer food ingredient scanner and FSSAI additive safety evaluator.
+5. [Climbit Decision Engine](https://github.com/di0206-innovator/Climbit): 12-hour PromptWars sprint; deterministic TypeScript carbon engine + Zod-enforced Gemini 2.0 AI routing with 34 tests (rank 28,897 to 449).
+6. [NyaySaathi](https://nyaysaathi-6qcz.vercel.app/): Sovereign legal AI platform for contract redlining and pre-litigation dossiers grounded in BNS and CPA 2019.
+7. [MerchantPulse](https://merchantpulse-psi.vercel.app/): Autonomous payment recovery engine for Razorpay merchants utilizing deterministic failure state machines.
+8. [Forge Goa](https://hhgoa26-eta.vercel.app/): HackerHouse Goa 2026 builder identity and squad formation platform.
+9. [Brainworks](https://github.com/manasir747/Brainworks): Millimeter-wave radar and Edge TinyML safety system for zero-visibility open-cast mines (SIH 2026).
+
+---
+
+## Published Field Notes & Architecture Deep-Dives
+
+1. [Building NotesGPT: An Offline-Capable AI Study Assistant](https://dev.to/divyanshu_sinha_72e579e28/building-notesgpt-an-offline-capable-ai-study-assistant-with-rag-local-llms-and-webgpu-3l22) (Dev.to)
+2. [From a Late Idea to a Verified Decision Engine in <12 Hours](https://lnkd.in/p/daV8a-y4) (LinkedIn)
+3. [Running an Internal Hackathon While Competing in It](https://lnkd.in/p/dYGmpf7M) (LinkedIn)
+4. [Hosting PromptWars × ALTA School of Technology: 8 Hours of Pure Building](https://lnkd.in/p/d4Q-c7y6) (LinkedIn)
+5. [PromptWars × ADYPU: What It Takes to Mobilize a Campus](https://lnkd.in/p/dYr6i734) (LinkedIn)
+6. [Building Healthify: When an Idea Survives Its First Failed Architecture](https://lnkd.in/p/dCdfU79w) (LinkedIn)
+7. [The Art of the Builder Demo: Why Most Product Pitches Fail in 60 Seconds](https://lnkd.in/p/dW4bN8g7) (LinkedIn)
+
+---
+
+## Wispr Flow Strategy & Growth Lab
+
+- 6-Stage Developer Adoption Flywheel: Developer Discovery $\rightarrow$ Frictionless Voice Setup $\rightarrow$ Public Code Demos $\rightarrow$ Campus Hackathon Integration $\rightarrow$ Enterprise Team Expansion $\rightarrow$ Organic Dev Advocacy.
+- 4 Speculative India Growth Blueprints:
+  1. *The 100-WPM Silent Hackathon*: Competitive voice-coding sprints across Indian engineering campuses.
+  2. *Regional Multilingual Dictation*: Hinglish, Marathi, and Tamil developer voice dictionaries.
+  3. *Open Source IDE Voice SDK*: Voice shortcuts integrated directly into VS Code, Cursor, and Neovim.
+  4. *The Student Builder Grant*: Sponsoring top campus builders with Wispr Flow hardware and subscriptions.
+
+For the full verbatim documentation, see [llms-full.txt](https://divyanshusinha.me/llms-full.txt).
