@@ -81,7 +81,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "alta-youtube",
     role: "Student Content Lead",
     organization: "ALTA School of Technology HQ YouTube",
-    timeline: "2025 – Present",
+    timeline: "2026 – Present",
     isCurrent: true,
     type: "Content & Media",
     location: "Pune, India",

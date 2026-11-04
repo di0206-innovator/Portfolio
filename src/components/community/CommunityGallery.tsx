@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { 
   Camera, 
   Calendar, 
@@ -11,10 +12,12 @@ import {
   Users, 
   FolderCheck, 
   CheckCircle2, 
-  HelpCircle
+  HelpCircle,
+  Eye,
+  FileImage
 } from "lucide-react";
 import { GALLERY_ITEMS, GalleryItem } from "@/data/gallery";
-import { EVENT_REGISTRY, EventRecord } from "@/data/events";
+import { EVENT_REGISTRY, EventRecord, EventPhoto } from "@/data/events";
 import { RECOGNITIONS, RecognitionItem } from "@/data/recognition";
 
 export default function CommunityGallery() {
@@ -24,6 +27,7 @@ export default function CommunityGallery() {
   const pageSize = 3;
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<EventRecord | null>(null);
+  const [activeModalPhotoIdx, setActiveModalPhotoIdx] = useState<number>(0);
 
   const eventCategories = ["All", "Organized & Hosted", "Participated & Selected", "Campus & Culture"];
 
@@ -33,6 +37,11 @@ export default function CommunityGallery() {
 
   const totalPages = Math.ceil(filteredEvents.length / pageSize);
   const paginatedEvents = filteredEvents.slice(eventPage * pageSize, (eventPage + 1) * pageSize);
+
+  const openEventModal = (ev: EventRecord) => {
+    setSelectedEvent(ev);
+    setActiveModalPhotoIdx(0);
+  };
 
   return (
     <section id="community" className="pt-48 pb-72 sm:pt-60 sm:pb-80 bg-[#0A0E1A] text-white border-b-2 border-[#0A0E1A]">
@@ -116,12 +125,12 @@ export default function CommunityGallery() {
               {paginatedEvents.map((ev) => (
                 <div
                   key={ev.id}
-                  onClick={() => setSelectedEvent(ev)}
-                  className="bg-white/5 border border-white/20 hover:border-white/50 p-5 flex flex-col justify-between transition-all duration-200 hover:translate-y-[-2px] space-y-3 cursor-pointer group"
+                  onClick={() => openEventModal(ev)}
+                  className="bg-white/5 border border-white/20 hover:border-white/50 p-5 flex flex-col justify-between transition-all duration-200 hover:translate-y-[-2px] space-y-4 cursor-pointer group"
                 >
                   <div>
                     {/* Top Status & Date */}
-                    <div className="flex items-center justify-between font-mono text-xs text-white/60 pb-2 border-b border-white/10 mb-2">
+                    <div className="flex items-center justify-between font-mono text-xs text-white/60 pb-2 border-b border-white/10 mb-3">
                       <span className="flex items-center gap-1.5 text-white font-bold uppercase text-[11px]">
                         {ev.roleConfirmed ? (
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
@@ -134,6 +143,23 @@ export default function CommunityGallery() {
                         {ev.statusBadge}
                       </span>
                     </div>
+
+                    {/* Primary Photo Preview if available */}
+                    {ev.photos && ev.photos.length > 0 && (
+                      <div className="relative aspect-[16/10] w-full bg-black/40 border border-white/20 mb-3 overflow-hidden">
+                        <Image
+                          src={ev.photos[0].url}
+                          alt={ev.photos[0].caption}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                        <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/80 backdrop-blur-sm text-amber-300 font-mono text-[10px] font-bold border border-white/20 flex items-center gap-1">
+                          <Camera className="w-3 h-3 text-[#F5B700]" />
+                          <span>{ev.photos.length} PHOTOS</span>
+                        </div>
+                      </div>
+                    )}
 
                     {/* Title */}
                     <h3 className="font-display font-black text-xl text-white mb-1.5 leading-snug group-hover:text-amber-300 transition-colors">
@@ -154,14 +180,15 @@ export default function CommunityGallery() {
                   </div>
 
                   {/* Highlights and Links Footer */}
-                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between font-mono text-xs gap-2">
+                  <div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between font-mono text-xs gap-2">
                     <span className="text-white/60 flex items-center gap-1 text-[11px]">
                       <MapPin className="w-3 h-3 text-[#F5B700]" />
                       {ev.location}
                     </span>
 
-                    <span className="text-amber-300 font-bold hover:underline">
-                      Inspect Event →
+                    <span className="text-amber-300 font-bold hover:underline flex items-center gap-1">
+                      <span>Inspect Event</span>
+                      <Eye className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </div>
@@ -263,8 +290,18 @@ export default function CommunityGallery() {
                     <span>{item.location}</span>
                   </div>
 
-                  <div className="relative aspect-[4/3] w-full bg-white/10 border border-white/20 mb-5 flex items-center justify-center p-4 overflow-hidden group-hover:bg-white/15 transition-colors">
-                    <Camera className="w-8 h-8 text-white/50 group-hover:text-white/80 transition-colors" />
+                  <div className="relative aspect-[4/3] w-full bg-white/10 border border-white/20 mb-5 flex items-center justify-center overflow-hidden">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <Camera className="w-8 h-8 text-white/50 group-hover:text-white/80 transition-colors" />
+                    )}
                   </div>
 
                   <h3 className="font-display font-bold text-xl text-white mb-2 group-hover:text-[#F5B700] transition-colors">
@@ -274,7 +311,10 @@ export default function CommunityGallery() {
 
                 <div className="pt-3 mt-3 border-t border-white/10 flex items-center justify-between font-mono text-xs text-white/60">
                   <span>{item.date}</span>
-                  <span className="text-[#7096FF] font-bold">Inspect Still →</span>
+                  <span className="text-[#7096FF] font-bold flex items-center gap-1">
+                    <span>Inspect Still</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </span>
                 </div>
               </div>
             ))}
@@ -282,16 +322,17 @@ export default function CommunityGallery() {
         )}
       </div>
 
-      {/* Event Detail Modal */}
+      {/* Event Detail Modal with Drive Photos Gallery */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-          <div className="bg-[#0A0E1A] text-white border-2 border-white/30 max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto">
+          <div className="bg-[#0A0E1A] text-white border-2 border-white/30 max-w-3xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-auto max-h-[92vh] overflow-y-auto">
+            {/* Header */}
             <div className="flex justify-between items-start border-b border-white/20 pb-4">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#F5B700] block mb-1">
                   {selectedEvent.category} · {selectedEvent.location}
                 </span>
-                <h3 className="font-display font-black text-2xl text-white">
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-white">
                   {selectedEvent.title}
                 </h3>
               </div>
@@ -303,6 +344,74 @@ export default function CommunityGallery() {
               </button>
             </div>
 
+            {/* Photos Showcase Grid */}
+            {selectedEvent.photos && selectedEvent.photos.length > 0 && (
+              <div className="space-y-4 bg-white/5 p-4 border border-white/15">
+                <div className="flex items-center justify-between font-mono text-xs">
+                  <span className="font-bold text-amber-300 uppercase flex items-center gap-1.5">
+                    <Camera className="w-4 h-4 text-[#F5B700]" />
+                    <span>EVENT PHOTOGRAPHY ARCHIVE ({selectedEvent.photos.length} PHOTOS)</span>
+                  </span>
+                  <span className="text-white/60 text-[11px]">Drive-Backed Photo Evidence</span>
+                </div>
+
+                {/* Primary Focused Photo */}
+                {selectedEvent.photos[activeModalPhotoIdx] && (
+                  <div className="space-y-2">
+                    <div className="relative aspect-[16/9] w-full bg-black border border-white/20 overflow-hidden">
+                      <Image
+                        src={selectedEvent.photos[activeModalPhotoIdx].url}
+                        alt={selectedEvent.photos[activeModalPhotoIdx].caption}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 1024px) 100vw, 800px"
+                      />
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1 font-mono text-xs">
+                      <p className="text-white/80 font-sans text-xs italic">
+                        &quot;{selectedEvent.photos[activeModalPhotoIdx].caption}&quot;
+                      </p>
+                      <a
+                        href={selectedEvent.photos[activeModalPhotoIdx].driveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400 text-black font-bold uppercase tracking-wider text-[11px] hover:bg-amber-300 transition-colors shrink-0"
+                      >
+                        <FolderCheck className="w-3.5 h-3.5" />
+                        <span>View Photo on Drive ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Thumbnail Strip */}
+                {selectedEvent.photos.length > 1 && (
+                  <div className="grid grid-cols-3 gap-2.5 pt-2 border-t border-white/10">
+                    {selectedEvent.photos.map((ph, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveModalPhotoIdx(idx)}
+                        className={`relative aspect-[16/10] border transition-all overflow-hidden ${
+                          activeModalPhotoIdx === idx
+                            ? "border-amber-400 ring-2 ring-amber-400/50"
+                            : "border-white/20 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <Image
+                          src={ph.url}
+                          alt={ph.caption}
+                          fill
+                          className="object-cover"
+                          sizes="200px"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Details */}
             <div className="space-y-3 font-mono text-xs">
               <div className="text-amber-300 font-bold text-sm">
                 CONFIRMED ROLE: {selectedEvent.role}
@@ -328,16 +437,17 @@ export default function CommunityGallery() {
               ))}
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-white/10 font-mono text-xs">
+            {/* Actions */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10 font-mono text-xs">
               {selectedEvent.driveFolderUrl ? (
                 <a
                   href={selectedEvent.driveFolderUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-[#1434FF] hover:bg-blue-600 text-white font-bold uppercase flex items-center gap-1.5 border border-white/20"
+                  className="px-4 py-2 bg-[#1434FF] hover:bg-blue-600 text-white font-bold uppercase flex items-center gap-1.5 border border-white/20 shadow-brutal-sm"
                 >
                   <FolderCheck className="w-4 h-4 text-amber-300" />
-                  <span>Open Google Drive Archive ↗</span>
+                  <span>Open Full Google Drive Folder ↗</span>
                 </a>
               ) : (
                 <span className="text-white/60">No Drive Folder Attached</span>
@@ -357,7 +467,7 @@ export default function CommunityGallery() {
       {/* Documentary Still Detail Modal */}
       {selectedItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-          <div className="bg-[#0A0E1A] text-white border-2 border-white/30 max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl relative">
+          <div className="bg-[#0A0E1A] text-white border-2 border-white/30 max-w-xl w-full p-6 sm:p-8 space-y-5 shadow-2xl relative">
             <div className="flex justify-between items-start border-b border-white/20 pb-4">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#F5B700]">
@@ -375,6 +485,18 @@ export default function CommunityGallery() {
               </button>
             </div>
 
+            {selectedItem.image && (
+              <div className="relative aspect-[16/10] w-full bg-black border border-white/20 overflow-hidden">
+                <Image
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                />
+              </div>
+            )}
+
             <p className="font-sans text-sm sm:text-base text-white/85 leading-relaxed">
               {selectedItem.caption}
             </p>
@@ -382,7 +504,28 @@ export default function CommunityGallery() {
             <div className="bg-white/5 p-4 border border-white/10 font-mono text-xs text-white/80 space-y-1">
               <div>TIMELINE: {selectedItem.date}</div>
               <div>LOCATION: {selectedItem.location}</div>
-              <div>ARCHIVE NOTE: Local photography slot ready. Connected to Drive backup.</div>
+            </div>
+
+            <div className="flex items-center justify-between pt-2 border-t border-white/10 font-mono text-xs">
+              {selectedItem.driveUrl ? (
+                <a
+                  href={selectedItem.driveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-black font-bold uppercase flex items-center gap-1.5"
+                >
+                  <FolderCheck className="w-4 h-4" />
+                  <span>View Original on Google Drive ↗</span>
+                </a>
+              ) : (
+                <span className="text-white/60">Independent Photography Archive</span>
+              )}
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold uppercase"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
