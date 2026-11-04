@@ -40,7 +40,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "alta-youtube-production",
-    title: "ALTA HQ YouTube Studio Set",
+    title: "Alta events",
     category: "Media & Studio",
     date: "2026 – Present",
     location: "Studio Floor, Pune",
