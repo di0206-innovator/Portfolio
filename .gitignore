@@ -39,3 +39,7 @@ next-env.d.ts
 # hallmark
 /.hallmark
 
+# audits & screenshots
+/shots/
+/reference_frames/
+

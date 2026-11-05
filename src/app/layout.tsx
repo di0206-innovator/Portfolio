@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Instrument_Serif, JetBrains_Mono, Inter_Tight } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "@/styles/globals.css";
 import JsonLd from "@/components/seo/JsonLd";
 
@@ -142,6 +143,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#F8F7F2] text-[#0A0E1A] antialiased selection:bg-[#1434FF] selection:text-white">
         <JsonLd />
         {children}
+        <Analytics />
       </body>
     </html>
   );
