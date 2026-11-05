@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { X, Play, Volume2, Sparkles, AlertCircle } from "lucide-react";
+import { X, Play, Volume2, Sparkles, AlertCircle, ExternalLink } from "lucide-react";
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -92,12 +92,23 @@ export default function VideoModal({ isOpen, onClose, videoUrl = null }: VideoMo
         {/* Bottom Metadata */}
         <div className="px-6 py-4 border-t border-white/20 bg-white/5 flex flex-wrap items-center justify-between font-mono text-xs text-white/70 gap-2">
           <span>SPEAKER: DIVYANSHU SINHA (ADYPU, PUNE)</span>
-          <button
-            onClick={onClose}
-            className="px-4 py-1.5 bg-white text-[#0A0E1A] font-bold uppercase hover:bg-white/90 transition-colors"
-          >
-            Close Modal
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://drive.google.com/file/d/1zZ9nqLol_Gz395InStT5m8Vvxa-iQ5kH/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 border border-white/30 text-white hover:bg-white/10 flex items-center gap-1.5 transition-colors uppercase font-bold text-[11px]"
+            >
+              <span>Open in Drive</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <button
+              onClick={onClose}
+              className="px-4 py-1.5 bg-white text-[#0A0E1A] font-bold uppercase hover:bg-white/90 transition-colors text-[11px]"
+            >
+              Close Modal
+            </button>
+          </div>
         </div>
       </div>
     </div>

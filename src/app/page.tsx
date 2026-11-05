@@ -72,7 +72,7 @@ export default function Home() {
       <VideoModal
         isOpen={videoModalOpen}
         onClose={() => setVideoModalOpen(false)}
-        videoUrl={null} // Configurable URL slot
+        videoUrl="https://drive.google.com/file/d/1zZ9nqLol_Gz395InStT5m8Vvxa-iQ5kH/preview"
       />
 
       {/* CUSTOM CURSOR FOLLOWER */}
