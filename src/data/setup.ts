@@ -20,7 +20,7 @@ export const SETUP_CATEGORIES = [
 ] as const;
 
 export const BUDGET_ITEMS: BudgetItem[] = [
-  // CORE SETUP ($2,683.00)
+  // CORE SETUP ($2,639.00)
   {
     id: "sony-zve10",
     name: "Sony ZV-E10 Mirrorless Camera Body",
@@ -141,18 +141,6 @@ export const BUDGET_ITEMS: BudgetItem[] = [
     growthObjective: "Voice Sprints",
     redundancyOrSubstitutions: "Dual-bay USB-C cradle can be charged directly off portable power banks or laptops while in transit.",
   },
-  {
-    id: "descript-license",
-    name: "Descript Creator License (1 Year)",
-    category: "Production & Distribution Software",
-    specs: "AI text-based voice/video editing, studio sound denoise, automatic captioning",
-    price: 144.0,
-    qty: 1,
-    phase: "core",
-    businessPurpose: "Fast-turnaround text-driven transcript editing to publish 24-36 short-form clips within 24 hours of shoots.",
-    growthObjective: "Distribution",
-    redundancyOrSubstitutions: "Automated filler word removal and sound cleanup cuts post-production cycle by ~60%.",
-  },
 
   // CONDITIONAL UPGRADES ($317.00)
   {
@@ -196,14 +184,14 @@ export const BUDGET_ITEMS: BudgetItem[] = [
 export const CORE_BUDGET = BUDGET_ITEMS.filter((i) => i.phase === "core").reduce(
   (acc, item) => acc + item.price * item.qty,
   0
-); // Exactly $2,683.00 USD
+); // Exactly $2,639.00 USD
 
 export const CONDITIONAL_BUDGET = BUDGET_ITEMS.filter((i) => i.phase === "conditional").reduce(
   (acc, item) => acc + item.price * item.qty,
   0
 ); // Exactly $317.00 USD
 
-export const TOTAL_BUDGET = CORE_BUDGET + CONDITIONAL_BUDGET; // Exactly $3,000.00 USD
+export const TOTAL_BUDGET = CORE_BUDGET + CONDITIONAL_BUDGET; // Exactly $2,956.00 USD
 
 export interface ContentPillar {
   letter: "A" | "B" | "C" | "D" | "E";
@@ -307,7 +295,7 @@ export const EXECUTION_ROADMAP: ExecutionMilestone[] = [
     kpis: [
       "Target: 500+ Cumulative Qualified Activations",
       "Target: 25%+ 14-day user dictation retention rate among onboarded students",
-      "Cost per qualified activation tracked against initial $3,000 infrastructure",
+      "Cost per qualified activation tracked against initial $2,956 infrastructure",
     ],
   },
   {

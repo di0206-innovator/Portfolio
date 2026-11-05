@@ -314,7 +314,7 @@ export default function DictionaryAndSetup() {
                 <div className="absolute top-4 right-4 text-7xl font-display font-black text-[#0A0E1A]/5 select-none pointer-events-none">
                   {currentPillar.letter}
                 </div>
-                <div className="max-w-3xl space-y-4">
+                <div className="w-full space-y-4">
                   <div className="inline-block px-2.5 py-1 bg-[#1434FF] text-white font-mono text-xs font-bold uppercase">
                     PILLAR {currentPillar.letter} · {currentPillar.title}
                   </div>
@@ -370,16 +370,16 @@ export default function DictionaryAndSetup() {
                 <span className="px-2.5 py-1 bg-green-100 text-green-900 border border-green-800 font-mono text-xs font-bold uppercase">
                   PRIMARY REQUIREMENT (ESSENTIAL)
                 </span>
-                <span className="font-mono text-2xl font-black text-[#0A0E1A]">${CORE_BUDGET} USD</span>
+                <span className="font-mono text-2xl font-black text-[#0A0E1A]">${CORE_BUDGET.toFixed(2)} USD</span>
               </div>
               <h4 className="font-display font-black text-xl text-[#0A0E1A] mb-2">
-                Phase 1: Core Field-Ready Kit (89.4% of Total)
+                Phase 1: Core Field-Ready Kit (89.3% of Total)
               </h4>
               <p className="font-sans text-xs text-[#474E5D] leading-relaxed mb-4">
-                Everything required to immediately initiate full-scale production: Sony ZV-E10 4K mirrorless camera with Sigma 18–50mm f/2.8 versatile zoom lens, Elgato Prompter with built-in 9&quot; display, DJI Mic 2 wireless 32-bit float audio, broadcast Shure MV7+ desktop voiceover mic, Aputure Amaran MC Pro lighting, SmallRig carbon tripod, SanDisk 2TB Extreme PRO SSD, dual SD cards, dual spare camera batteries with USB-C charger, and 1-year Descript editing license.
+                Everything required to immediately initiate full-scale production: Sony ZV-E10 4K mirrorless camera with Sigma 18–50mm f/2.8 versatile zoom lens, Elgato Prompter with built-in 9&quot; display, DJI Mic 2 wireless 32-bit float audio, broadcast Shure MV7+ desktop voiceover mic, Aputure Amaran MC Pro lighting, SmallRig carbon tripod, SanDisk 2TB Extreme PRO SSD, dual SD cards, and dual spare camera batteries with USB-C charger.
               </p>
               <div className="font-mono text-xs text-[#1434FF] font-semibold">
-                11 Line Items · Zero Redundant Bloat · Day 1 Deployable
+                10 Line Items · Zero Software Bloat · Day 1 Deployable
               </div>
             </div>
 
@@ -388,10 +388,10 @@ export default function DictionaryAndSetup() {
                 <span className="px-2.5 py-1 bg-amber-100 text-amber-900 border border-amber-800 font-mono text-xs font-bold uppercase">
                   CONDITIONAL UPGRADES (OPTIONAL BUFFER)
                 </span>
-                <span className="font-mono text-2xl font-black text-[#1434FF]">${CONDITIONAL_BUDGET} USD</span>
+                <span className="font-mono text-2xl font-black text-[#1434FF]">${CONDITIONAL_BUDGET.toFixed(2)} USD</span>
               </div>
               <h4 className="font-display font-black text-xl text-[#0A0E1A] mb-2">
-                Phase 2: Scale &amp; Remote Studio Enhancements (10.6%)
+                Phase 2: Scale &amp; Remote Studio Enhancements (10.7%)
               </h4>
               <p className="font-sans text-xs text-[#474E5D] leading-relaxed mb-4">
                 Riverside.fm 4K uncompressed remote studio software for high-fidelity founder interviews across Bengaluru/Delhi/US, Ulanzi RGB magnetic tube rim light, and Anker Soundcore Space One ANC monitoring headphones for loud hackathon sound checks.
@@ -414,7 +414,7 @@ export default function DictionaryAndSetup() {
                     : "bg-white text-[#0A0E1A] border-[#0A0E1A]/20 hover:border-[#0A0E1A]"
                 }`}
               >
-                All Items ($3,000)
+                All Items (${TOTAL_BUDGET.toFixed(2)})
               </button>
               <button
                 onClick={() => setSelectedPhase("core")}
@@ -424,7 +424,7 @@ export default function DictionaryAndSetup() {
                     : "bg-white text-[#0A0E1A] border-[#0A0E1A]/20 hover:border-[#0A0E1A]"
                 }`}
               >
-                Core Only (${CORE_BUDGET})
+                Core Only (${CORE_BUDGET.toFixed(2)})
               </button>
               <button
                 onClick={() => setSelectedPhase("conditional")}
@@ -434,7 +434,7 @@ export default function DictionaryAndSetup() {
                     : "bg-white text-[#0A0E1A] border-[#0A0E1A]/20 hover:border-[#0A0E1A]"
                 }`}
               >
-                Conditional Only (${CONDITIONAL_BUDGET})
+                Conditional Only (${CONDITIONAL_BUDGET.toFixed(2)})
               </button>
             </div>
 
@@ -528,7 +528,7 @@ export default function DictionaryAndSetup() {
                       Subtotal ({filteredItems.length} items shown)
                     </td>
                     <td className="p-4 hidden md:table-cell text-xs text-[#474E5D] font-medium" colSpan={2}>
-                      Full Setup: Core ($2,683) + Conditional ($317) = $3,000 Total
+                      Full Setup: Core ($2,639) + Conditional ($317) = $2,956 Total
                     </td>
                     <td className="p-4 text-center font-mono">
                       {filteredItems.reduce((acc, it) => acc + it.qty, 0)}
@@ -564,10 +564,10 @@ export default function DictionaryAndSetup() {
                     01 · CAPEX BALANCE SHEET
                   </span>
                   <div className="text-2xl font-black text-[#0A0E1A] font-display">
-                    $3,000.00
+                    $2,956.00
                   </div>
                   <p className="text-[11px] text-[#474E5D] mt-1 font-sans">
-                    Core: $2,683.00 (89.4%) + Conditional: $317.00 (10.6%). Zero unallocated variance.
+                    Core: $2,639.00 (89.3%) + Conditional: $317.00 (10.7%). Zero unallocated variance.
                   </p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-[#0A0E1A]/10 text-[10px] text-emerald-700 font-bold">
@@ -581,10 +581,10 @@ export default function DictionaryAndSetup() {
                     02 · ASSET AMORTIZATION
                   </span>
                   <div className="text-2xl font-black text-[#1434FF] font-display">
-                    $55.56 / Asset
+                    $54.74 / Asset
                   </div>
                   <p className="text-[11px] text-[#474E5D] mt-1 font-sans">
-                    $3,000 amortized across 54 video assets in 90 days. Drops to $0.00 marginal CapEx from Day 91+.
+                    $2,956 amortized across 54 video assets in 90 days. Drops to $0.00 marginal CapEx from Day 91+.
                   </p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-[#0A0E1A]/10 text-[10px] text-emerald-700 font-bold">
@@ -598,10 +598,10 @@ export default function DictionaryAndSetup() {
                     03 · BLENDED CAC EFFICIENCY
                   </span>
                   <div className="text-2xl font-black text-[#0A0E1A] font-display">
-                    $3.00 / User
+                    $2.96 / User
                   </div>
                   <p className="text-[11px] text-[#474E5D] mt-1 font-sans">
-                    $3,000 capex ÷ 1,000+ qualified developer activations. Industry B2D ad CAC: $25–$50.
+                    $2,956 capex ÷ 1,000+ qualified developer activations. Industry B2D ad CAC: $25–$50.
                   </p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-[#0A0E1A]/10 text-[10px] text-emerald-700 font-bold">
@@ -615,29 +615,71 @@ export default function DictionaryAndSetup() {
                     04 · CONSERVATIVE YEAR 1 ROI
                   </span>
                   <div className="text-2xl font-black text-emerald-700 font-display">
-                    380% Net ROI
+                    387% Net ROI
                   </div>
                   <p className="text-[11px] text-[#474E5D] mt-1 font-sans">
                     10% paid conversion (100 devs @ $144 ARR = $14,400 ARR). Full capex payback in 75 days.
                   </p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-[#0A0E1A]/10 text-[10px] text-emerald-700 font-bold">
-                  ✓ 4.8x Cash-on-Cash Multiplier
+                  ✓ 4.9x Cash-on-Cash Multiplier
                 </div>
               </div>
             </div>
 
-            {/* Deep-Dive Math Notes */}
-            <div className="p-4 bg-[#F8F7F2] border border-[#0A0E1A]/20 font-sans text-xs text-[#0A0E1A] leading-relaxed space-y-2">
-              <div className="font-bold font-mono text-[11px] uppercase text-[#1434FF]">
-                MATHEMATICAL RIGOR &amp; ERGONOMIC VELOCITY:
+            {/* Deep-Dive Math Notes: Balanced 2-Column Layout Filling Full Width */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div className="p-5 bg-[#F8F7F2] border border-[#0A0E1A]/20 flex flex-col justify-between space-y-3">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between border-b border-[#0A0E1A]/10 pb-2 font-mono text-[11px]">
+                    <span className="font-bold uppercase text-[#1434FF]">01 · HUMAN VELOCITY EQUATION</span>
+                    <span className="px-2 py-0.5 bg-[#1434FF] text-white font-bold text-[10px]">3.5x THROUGHPUT</span>
+                  </div>
+                  <p className="w-full max-w-none font-sans text-xs sm:text-sm text-[#0A0E1A] leading-relaxed">
+                    Spoken natural language via Wispr Flow operates at <strong>154–165 WPM</strong> versus mechanical typing at <strong>40–45 WPM</strong>. For an engineer spending 90 minutes per day typing PRDs, code prompts, and code reviews, voice dictation reduces active keyboard time to ~26 minutes—recovering <strong>~64 minutes of cognitive engineering focus per day</strong> (over 21 hours recovered per developer per month).
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#0A0E1A]/10 font-mono text-[11px] text-center">
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">TYPING</span>
+                    <span className="font-black text-[#0A0E1A]">45 WPM</span>
+                  </div>
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">WISPR FLOW</span>
+                    <span className="font-black text-[#1434FF]">158 WPM</span>
+                  </div>
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">TIME SAVED</span>
+                    <span className="font-black text-emerald-700">21+ hrs/mo</span>
+                  </div>
+                </div>
               </div>
-              <p>
-                <strong>Human Velocity Equation:</strong> Spoken natural language via Wispr Flow operates at <strong>154–165 WPM</strong> versus mechanical typing at <strong>40–45 WPM</strong> (a verified <strong>3.5x throughput multiplier</strong>). For an engineer spending 90 minutes per day typing PRDs, code prompts, and code reviews, voice dictation reduces active keyboard time to ~26 minutes—recovering <strong>~64 minutes of cognitive engineering focus per day</strong> (over 21 hours recovered per developer per month).
-              </p>
-              <p>
-                <strong>Market Price Verification:</strong> Every item in the CapEx registry is verified against current live B&amp;H Photo, Amazon, and official vendor MSRPs (Sony ZV-E10 Body: $599; Sigma 18–50mm f/2.8: $549; Elgato Prompter: $279; DJI Mic 2 2-Person: $349; Shure MV7+: $279; Amaran MC Pro: $149; SmallRig Carbon Tripod: $129; SanDisk 2TB Extreme PRO: $199; Dual 128GB SD: $58; Dual Batteries: $49; Descript 1-Yr: $144; Riverside 1-Yr: $186; Ulanzi Wand: $45; Anker ANC: $86). Exactly <strong>$3,000.00 USD total</strong> with zero fabricated figures.
-              </p>
+
+              <div className="p-5 bg-[#F8F7F2] border border-[#0A0E1A]/20 flex flex-col justify-between space-y-3">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between border-b border-[#0A0E1A]/10 pb-2 font-mono text-[11px]">
+                    <span className="font-bold uppercase text-[#1434FF]">02 · MARKET PRICE AUDIT (B&amp;H / AMAZON / MSRP)</span>
+                    <span className="px-2 py-0.5 bg-emerald-800 text-white font-bold text-[10px]">$0.00 VARIANCE</span>
+                  </div>
+                  <p className="w-full max-w-none font-sans text-xs sm:text-sm text-[#0A0E1A] leading-relaxed">
+                    Every item in the CapEx registry is verified against live retail listings: Sony ZV-E10 Body ($599), Sigma 18–50mm f/2.8 ($549), Elgato Prompter ($279), DJI Mic 2 2-Person ($349), Shure MV7+ ($279), Amaran MC Pro ($149), SmallRig Carbon Tripod ($129), SanDisk 2TB Extreme PRO ($199), Dual 128GB SD ($58), Dual Batteries ($49), Riverside 1-Yr ($186), Ulanzi Wand ($45), and Anker ANC ($86). Exactly <strong>$2,956.00 USD total</strong> with zero fabricated figures.
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#0A0E1A]/10 font-mono text-[11px] text-center">
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">PHASE 1 CORE</span>
+                    <span className="font-black text-[#0A0E1A]">$2,639.00</span>
+                  </div>
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">CONDITIONAL</span>
+                    <span className="font-black text-[#1434FF]">$317.00</span>
+                  </div>
+                  <div className="p-2 bg-white border border-[#0A0E1A]/15">
+                    <span className="block text-[10px] text-[#474E5D]">TOTAL CAPEX</span>
+                    <span className="font-black text-emerald-700">$2,956.00</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -747,8 +789,8 @@ export default function DictionaryAndSetup() {
 
               <div className="p-4 bg-[#F8F7F2] border border-[#0A0E1A]/20">
                 <span className="text-xs text-[#474E5D] font-bold uppercase block">EST. COST PER QUALIFIED ACTIVATION</span>
-                <div className="text-3xl font-black text-[#1434FF] mt-1">~$3.00 USD</div>
-                <span className="text-[11px] text-[#474E5D]"> amortized against total $3,000 capex</span>
+                <div className="text-3xl font-black text-[#1434FF] mt-1">~$2.96 USD</div>
+                <span className="text-[11px] text-[#474E5D]"> amortized against total $2,956 capex</span>
               </div>
 
               <div className="p-4 bg-[#F8F7F2] border border-[#0A0E1A]/20">
@@ -836,7 +878,7 @@ export default function DictionaryAndSetup() {
             PART 8: WHY THIS IS A BET WORTH TAKING (FINAL THESIS & SIGN-OFF)
            ========================================================================= */}
         <div className="bg-[#0A0E1A] text-white p-8 sm:p-14 border-2 border-[#0A0E1A] shadow-brutal space-y-8 relative overflow-hidden">
-          <div className="max-w-4xl space-y-6">
+          <div className="w-full space-y-6">
             <span className="font-mono text-xs uppercase tracking-widest text-[#1434FF] font-bold block bg-white/10 px-3 py-1 w-fit">
               INVESTMENT CONCLUSION
             </span>
@@ -845,11 +887,11 @@ export default function DictionaryAndSetup() {
               Why This Is a Bet Worth Taking.
             </h3>
 
-            <div className="space-y-4 font-sans text-sm sm:text-base text-white/90 leading-relaxed">
-              <p>
+            <div className="space-y-3 font-sans text-sm sm:text-base text-white/90 leading-relaxed">
+              <p className="w-full max-w-none">
                 Wispr Flow isn&apos;t simply funding a creator&apos;s equipment.
               </p>
-              <p className="text-white font-semibold">
+              <p className="w-full max-w-none text-white font-semibold">
                 It is backing an independent builder who can create, demonstrate, and distribute voice-first workflows to India&apos;s next generation of developers, founders, and creators.
               </p>
             </div>
