@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Camera, Compass, Terminal, Sparkles, BookOpen, GraduationCap, Briefcase, Award } from "lucide-react";
+import { Camera, Compass, Terminal, Sparkles, BookOpen, GraduationCap, Briefcase, Award, ExternalLink } from "lucide-react";
 import { EXPERIENCES } from "@/data/experience";
 
 export default function AboutPerson() {
@@ -11,26 +11,33 @@ export default function AboutPerson() {
     {
       icon: Camera,
       title: "Nature & 35mm Prime Photography",
-      desc: "Western Ghats mist, raw landscapes, and framing stillness for digital spatial balance.",
+      desc: "Western Ghats mist, raw landscapes, and framing stillness. An observational habit that directly informs my spatial and typographic software design.",
       tag: "OBSERVATION",
+      link: {
+        url: "https://in.pinterest.com/sinhadeep0206/",
+        label: "Visual Boards (@sinhadeep0206)",
+      },
     },
     {
       icon: Terminal,
       title: "Emerging Tooling & Voice Runtimes",
-      desc: "Voice-first pipelines, local WebLLM inference, and multi-agent coordination.",
+      desc: "Voice-first pipelines, local WebLLM inference, and custom desktop hardware. Obsessed with closing the latency gap between thought and terminal execution.",
       tag: "CURIOSITY",
+      badge: "⚡ WebGPU · Ollama · 154 WPM",
     },
     {
       icon: Compass,
       title: "Community Architecture",
-      desc: "Cultivating collegiate developer density, hackathon guilds, and sustained peer momentum.",
+      desc: "Cultivating collegiate builder density, hackathon guilds, and sustained peer energy. Culture precedes code—getting 350+ builders into one room to ship.",
       tag: "MOMENTUM",
+      badge: "🏛️ GDG ADYPU · Alta Club Pres.",
     },
     {
       icon: BookOpen,
       title: "Continuous Synthesis",
-      desc: "Synthesizing principles across contract law, payment gateways, agronomy, and AI tools.",
+      desc: "Connecting principles across APMC mandis, contract law, mining safety radar, and alpine field perspective to solve messy real-world problems.",
       tag: "SYNTHESIS",
+      badge: "🌐 AgriTech · FinTech · Legal AI",
     },
   ];
 
@@ -101,9 +108,27 @@ export default function AboutPerson() {
                       {facet.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-[#0A0E1A] leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-[#0A0E1A] leading-relaxed font-sans mb-4">
                       {facet.desc}
                     </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#0A0E1A]/10 font-mono text-[11px]">
+                    {facet.link ? (
+                      <a
+                        href={facet.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[#1434FF] hover:text-[#0A0E1A] font-bold hover:underline transition-colors"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        <span>{facet.link.label}</span>
+                      </a>
+                    ) : (
+                      <span className="text-[#474E5D] font-semibold">
+                        {facet.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
               );

@@ -30,7 +30,8 @@ export default function JsonLd() {
         "sameAs": [
           "https://www.linkedin.com/in/divyanshu-sinha-46074126b/",
           "https://github.com/di0206-innovator",
-          "https://dev.to/divyanshu_sinha_72e579e28"
+          "https://dev.to/divyanshu_sinha_72e579e28",
+          "https://in.pinterest.com/sinhadeep0206/"
         ],
         "knowsAbout": [
           "AI Product Engineering",
