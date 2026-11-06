@@ -13,7 +13,7 @@ export default function FinalCta({ onOpenVideo }: FinalCtaProps) {
         {/* Top CTA Statement */}
         <div className="max-w-4xl space-y-6 mb-16">
           <div className="font-mono text-xs uppercase tracking-widest text-amber-300 font-bold">
-            SECTION 10 · CONCLUSION & INITIATION
+            SECTION 09 · CONCLUSION & INITIATION
           </div>
           <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.95]">
             Have a growth problem worth solving?

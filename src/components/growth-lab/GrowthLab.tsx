@@ -37,7 +37,7 @@ export default function GrowthLab() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#0A0E1A]/20">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#1434FF] font-bold block mb-2">
-              SECTION 06 · GROWTH & DISTRIBUTION STRATEGY
+              SECTION 05 · GROWTH & DISTRIBUTION STRATEGY
             </span>
             <h2 className="font-display font-black text-4xl sm:text-7xl text-[#0A0E1A] tracking-tight">
               The Wispr Flow Growth Lab

@@ -11,7 +11,7 @@ export default function Philosophy() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
           <span className="font-mono text-xs uppercase tracking-widest bg-[#0A0E1A] text-white px-3 py-1 font-bold">
-            SECTION 07 · OPERATING PHILOSOPHY
+            SECTION 06 · OPERATING PHILOSOPHY
           </span>
 
           {/* Dynamic Switchable Typography */}

@@ -109,7 +109,7 @@ export default function DictionaryAndSetup() {
             <div>
               <div className="font-mono text-xs uppercase tracking-widest text-[#1434FF] font-bold mb-2 flex items-center gap-2">
                 <Radio className="w-4 h-4 text-[#1434FF] animate-pulse" />
-                SECTION 09 · STRATEGIC CREATOR &amp; COMMUNITY INFRASTRUCTURE
+                SECTION 08 · STRATEGIC CREATOR &amp; COMMUNITY INFRASTRUCTURE
               </div>
               <h2 className="font-display font-black text-3xl sm:text-6xl text-[#0A0E1A] tracking-tight leading-[1.05]">
                 DIVYANSHU × WISPR FLOW

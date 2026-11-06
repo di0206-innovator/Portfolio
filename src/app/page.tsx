@@ -7,7 +7,6 @@ import Hero from "@/components/hero/Hero";
 import Capabilities from "@/components/capabilities/Capabilities";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import CommunityGallery from "@/components/community/CommunityGallery";
-import XRaySection from "@/components/xray/XRaySection";
 import GrowthLab from "@/components/growth-lab/GrowthLab";
 import Philosophy from "@/components/philosophy/Philosophy";
 import AboutPerson from "@/components/about/AboutPerson";
@@ -50,22 +49,19 @@ export default function Home() {
       {/* SECTION 04: PEOPLE, PLACES & COMMUNITY */}
       <CommunityGallery />
 
-      {/* SECTION 05: EVERY SURFACE HAS AN UNDERNEATH (X-RAY & VOICE PROCESS) */}
-      <XRaySection />
-
-      {/* SECTION 06: THE WISPR FLOW GROWTH LAB */}
+      {/* SECTION 05: THE WISPR FLOW GROWTH LAB */}
       <GrowthLab />
 
-      {/* SECTION 07: WHAT I BELIEVE (PHILOSOPHY) */}
+      {/* SECTION 06: WHAT I BELIEVE (PHILOSOPHY) */}
       <Philosophy />
 
-      {/* SECTION 08: OUTSIDE THE PRODUCT, THERE IS A PERSON */}
+      {/* SECTION 07: OUTSIDE THE PRODUCT, THERE IS A PERSON */}
       <AboutPerson />
 
-      {/* SECTION 09: NAME / DICTIONARY / THE $3,000 SETUP */}
+      {/* SECTION 08: NAME / DICTIONARY / THE $2,956 SETUP */}
       <DictionaryAndSetup />
 
-      {/* SECTION 10: THE FINAL CTA & WATERMARK FOOTER */}
+      {/* SECTION 09: THE FINAL CTA & WATERMARK FOOTER */}
       <FinalCta onOpenVideo={() => setVideoModalOpen(true)} />
 
       {/* ACCESSIBLE VIDEO PITCH MODAL */}

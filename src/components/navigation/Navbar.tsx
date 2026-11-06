@@ -24,7 +24,6 @@ export default function Navbar({ onOpenVideo }: NavbarProps) {
     { label: "Builds", href: "#selected-work" },
     { label: "Capabilities", href: "#capabilities" },
     { label: "Community", href: "#community" },
-    { label: "The Process", href: "#xray" },
     { label: "Growth Lab", href: "#growth-lab" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },

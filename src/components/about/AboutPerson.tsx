@@ -48,7 +48,7 @@ export default function AboutPerson() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#0A0E1A]/20">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#0A0E1A] font-bold block mb-2">
-              SECTION 08 · THE BUILDER PROFILE
+              SECTION 07 · THE BUILDER PROFILE
             </span>
             <h2 className="font-display font-black text-4xl sm:text-6xl text-[#0A0E1A] tracking-tight">
               Outside the product, there is a person.
